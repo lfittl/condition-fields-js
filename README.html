@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>condition-fields.js</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="condition-fields.js"></script>
+    <link rel="stylesheet" href="condition-fields.css" type="text/css" />
+  </head>
+  <body>
+    <h2>condition-fields.js</h2>
+    <p>
+      A helper library to make form fields for AND/OR conditions in queries/reports that are stored as a JSON field in your database.
+    </p>
+    <h3>Usage</h3>
+    <p>
+      For example, lets say your customer wants to create a report where the elements are either is_valid and is_index, or which are marked as always_show.
+    </p>
+    <p>
+      The data would be stored and output by you like this:
+    </p>
+    <pre>
+      &lt;input type="hidden" name="conditions" value="<span id="example_field">[{'is_valid': 'true', 'is_indexed': 'true'}, {'always_show': 'true'}]</span>" /&gt;
+    </pre>
+    <p>
+      condition-fields.js then turns it into:
+    </p>
+    <form id="test">
+      <input type="hidden" name="conditions" value="[{&quot;is_valid&quot;: &quot;true&quot;, &quot;is_indexed&quot;: &quot;true&quot;}, {&quot;always_show&quot;: &quot;true&quot;}]" data-condition-fields="true" onchange="$('#example_field').text(this.value);" />
+    </form>
+    <script type="text/javascript">
+      $('#test').conditionFields();
+    </script>
+    <p>
+      After each data change the conditions hidden field is updated, so you can use standard form submission without worry.
+    </p>
+    <h3>License &amp; Copyright</h3>
+    </p>
+      Licensed under MIT license.
+    </p>
+    <p>
+      Copyright &copy; 2013, Lukas Fittl &lt;lukas@fittl.com&gt;
+    </p>
+  </body>
+</html>

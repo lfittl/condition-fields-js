@@ -1,0 +1,14 @@
+div.condition-fields-container fieldset:first-child legend {
+  display: none;
+}
+div.condition-fields-container a {
+  color: gray;
+  font-size: small;
+}
+div.condition-fields-container .operator {
+  color: gray;
+  font-size: small;
+}
+div.condition-fields-container a.delete {
+  text-decoration: none;
+}
